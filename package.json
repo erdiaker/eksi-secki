@@ -1,0 +1,34 @@
+{
+  "name": "eksi-secki",
+  "version": "0.0.0",
+  "description": "Chrome extension for popular Turkish website https://eksisozluk.com, suggesting a list of topics based on user's clicking behavior.",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "gullible": "^0.0.1",
+    "jquery": "^2.1.4",
+    "snowball": "^0.3.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "chai": "^2.2.0",
+    "jsdom": "^3.1.2",
+    "sinon": "^1.14.1",
+    "sinon-chrome": "git://github.com/vitalets/sinon-chrome.git#9005f5a2cc",
+    "localStorage": "^1.0.3"
+  },
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erdiaker/eksi-secki.git"
+  },
+  "author": "Erdi Aker <erdiaker@gmail.com> (https://github.com/erdiaker)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erdiaker/eksi-secki/issues"
+  },
+  "homepage": "https://github.com/erdiaker/eksi-secki"
+}

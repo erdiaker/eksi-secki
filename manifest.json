@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+
+  "name": "Ekşi Seçki",
+  "description": "Ekşi Sözlük için başlık önerme aparatı.",
+  "version": "0.0.0",
+
+  "icons": {
+    "128": "image/icon-128x128.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "declarativeContent"
+  ],
+  
+  "page_action": {
+    "default_title": "Ekşi Seçki",
+    "default_icon": "image/icon-19x19.png",
+    "default_popup": "popup/popup.html"
+  },
+
+  "background": {
+    "scripts": [
+      "node_modules/gullible/gullible.js", 
+      "node_modules/snowball/stemmer/lib/Snowball.min.js", 
+      "data/stopwords.js", 
+      "popup/page-action.js",
+      "background.js" 
+    ],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://eksisozluk.com/*"],
+      "js": [
+        "node_modules/jquery/dist/jquery.js",
+        "content.js"
+      ]
+    }
+  ]
+}
+
