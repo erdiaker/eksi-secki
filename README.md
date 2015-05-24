@@ -35,7 +35,7 @@ the extension to learn your preferences and make good suggestions.
 
 ## Privacy
 
-By using this extension, you DO NOT sent any data to me or any third-party
+By using this extension, you DO NOT send any data to me or any third-party
 server. The extension keeps all the collected data on your browser, without
 sending any part of it to elsewhere.
 
