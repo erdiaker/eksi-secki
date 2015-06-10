@@ -3,7 +3,7 @@
 
   "name": "Ekşi Seçki",
   "description": "Ekşi Sözlük için başlık önerme aparatı.",
-  "version": "0.0.0",
+  "version": "0.0.1",
 
   "icons": {
     "128": "image/icon-128x128.png"
