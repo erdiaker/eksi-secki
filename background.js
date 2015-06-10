@@ -124,15 +124,28 @@ var BackgroundScript = (function() {
   };
 
   var isIndexedTopic = function(request) {
-    return (request.href in _store.topics);
+    if (!(request.href in _store.topics)) {
+      return false;
+    }
+    
+    var indexDate = new Date(_store.topics[request.href].timestamp);
+    var today = new Date();
+    if (!isSameDay(today, indexDate)) {
+      return false;
+    }
+    
+    return true;
   };
 
   var addTopic = function(request) {
     delete request['type'];
+    request.timestamp = (new Date()).getTime();
     _store.topics[request.href] = request;
   };
 
   var getReader = function() {
+    cleanOldTopics();
+
     var scores = {};
     var keys = [];
     for (var key in _store.topics) {
@@ -199,6 +212,28 @@ var BackgroundScript = (function() {
   var getClassifier = function() {
     return _classifier;
   };
+
+  var isSameDay = function(d1, d2) {
+    //TODO: replace with a server time solution
+    if (d1.getDate() != d2.getDate()
+      || d1.getMonth() != d2.getMonth()
+      || d1.getFullYear() != d2.getFullYear()) {
+      return false;
+    }
+    return true;
+  }
+
+  var cleanOldTopics = function() {
+    var today = new Date();
+    for (var key in _store.topics) {
+      if (_store.topics.hasOwnProperty(key)) {
+        var indexDate = new Date(_store.topics[key].timestamp);
+        if (!isSameDay(today, indexDate)) {
+          delete _store.topics[key];
+        }
+      }
+    }
+  }
 
   return {
     init: init,
