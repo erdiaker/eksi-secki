@@ -8,12 +8,17 @@ topics on Ekşi Sözlük, based on user's clicking behavior.
 
 ## Installation
 
+You can install Ekşi Seçki via Chrome Web Store by clicking
+[here](https://chrome.google.com/webstore/detail/ekşi-seçki/pofknaddhjoapjhagikhdaaepomlcdhi).
+
+### Manual
+
 Clone the repository:
 ```sh
 git clone https://github.com/erdiaker/eksi-secki.git
 ```
 
-Step into the install directory, install the dependencies, run the tests:
+Step into the installation directory, install the dependencies, run the tests:
 ```sh
 cd eksi-secki
 npm install
@@ -22,7 +27,7 @@ npm test
 
 Start Chrome. Open extension management page (chrome://extensions). Check
 "Developer mode" checkbox if it's not checked already. Click "Load unpacked
-extension" button, and choose the install directory to load the extension.   
+extension" button, and choose the installation directory to load the extension.   
 
 
 ## Usage
