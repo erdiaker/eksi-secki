@@ -4,11 +4,11 @@ var ContentScript = (function() {
   var init = function() {
     wireAnchorClickCallbacks();
     wireIndexChangeCallbacks();
-    sendTopics();
     setupButton();
   };
 
   var wireAnchorClickCallbacks = function() {
+    sendTopics();
     $('.topic-list').find('a:not(.sponsored)')
     .off('click', recordTitleClick)
     .on('click', recordTitleClick);
